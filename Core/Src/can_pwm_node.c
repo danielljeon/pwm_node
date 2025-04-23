@@ -1,6 +1,7 @@
 /** Auto-generated CAN message definitions from DBC file. */
 
 #include "can_pwm_node.h"
+#include "servo_control.h"
 
 const can_message_t dbc_messages[] = {
     {
@@ -30,7 +31,7 @@ const can_message_t dbc_messages[] = {
         .message_id = 513,
         .id_mask = 0xFFFFFFFF,
         .dlc = 8,
-        .rx_handler = 0,
+        .rx_handler = (can_rx_handler_t)can_rx_servo_command,
         .tx_handler = 0,
         .signal_count = 4,
         .signals =
