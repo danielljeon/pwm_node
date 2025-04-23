@@ -195,7 +195,7 @@ void can_init(void) {
   CAN_FilterTypeDef can_filter_config;
 
   can_filter_config.FilterActivation = CAN_FILTER_ENABLE; // Enable the filter.
-  can_filter_config.FilterBank = 18; // Assign filter to bank 18.
+  can_filter_config.FilterBank = 0; // Assign filter to bank 0.
   can_filter_config.FilterFIFOAssignment = CAN_FILTER_FIFO0; // Use FIFO0.
   // Set filter to accept all IDs.
   can_filter_config.FilterIdHigh = 0x0000;
@@ -207,13 +207,13 @@ void can_init(void) {
   can_filter_config.FilterMode = CAN_FILTERMODE_IDMASK;
   // Use 32-bit filter scale.
   can_filter_config.FilterScale = CAN_FILTERSCALE_32BIT;
-  // Filter bank config for dual CAN setups.
-  can_filter_config.SlaveStartFilterBank = 20;
+  // Filter bank config for single CAN setup.
+  can_filter_config.SlaveStartFilterBank = 14;
 
-  // Apply filter settings to both CAN1 and CAN2.
+  // Apply filter settings to CAN1.
   HAL_CAN_ConfigFilter(&hcan1, &can_filter_config);
 
-  // Start CAN1 and CAN2.
+  // Start CAN1.
   HAL_CAN_Start(&hcan1);
 
   // Enable interrupts.
