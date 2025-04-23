@@ -18,6 +18,10 @@ PWM controller board designed for CAN-based control.
     * [1.4 Clock Configurations](#14-clock-configurations)
   * [2 TJA1051T/3 CAN Bus Transceiver](#2-tja1051t3-can-bus-transceiver)
   * [3 PWM Breakouts](#3-pwm-breakouts)
+    * [3.1 Clocks](#31-clocks)
+    * [3.2 Pulse Width Modulation (PWM) Timer](#32-pulse-width-modulation-pwm-timer)
+      * [3.2.1 Timer Calculations](#321-timer-calculations)
+    * [3.3 Direct Memory Access (DMA)](#33-direct-memory-access-dma)
 <!-- TOC -->
 
 </details>
@@ -91,3 +95,49 @@ Carry over from [nerve](https://github.com/danielljeon/nerve).
 ---
 
 ## 3 PWM Breakouts
+
+### 3.1 Clocks
+
+`APB2`: 80 MHz (clock for TIM2 PWM output channels).
+
+### 3.2 Pulse Width Modulation (PWM) Timer
+
+#### 3.2.1 Timer Calculations
+
+Given the PWM equation:
+
+$$f_{PWM} = \frac{f_{TIM}}{ \left( ARR + 1 \right) \times \left( PSC + 1 \right) }$$
+
+- $f_{TIM} = 1 \space \mathrm{MHz}$
+    - Choosing 1 MHz (1 µs per tick) to simplify calculations.
+- $ARR = 20000 - 1$
+    - Counter period, aka Auto Reload Register (ARR) of 19999 is used to
+      simplify the translation of 1 ms and 2 ms pulse widths.
+- $f_{PWM} = 1 \space \mathrm{MHz}$
+    - Aiming for 1 µs ticks, or $1 \times 10 ^{-6} \space \mathrm{s}$.
+    - Calculating for required PWM frequency:
+        - $f_{PWM} = \frac{1}{1 \times 10 ^{-6} \space \mathrm{s}} = 1 \space \mathrm{MHz}$
+
+Thus, the prescaler, $PSC = 80 - 1$.
+
+With these settings the following PWM values can be obtained:
+
+```
+1 ms -> CCR = 1000
+1.5 ms -> CCR = 1500
+2 ms -> CCR = 2000
+```
+
+### 3.3 Direct Memory Access (DMA)
+
+`TIM2_CH1` `DMA1 Stream5`, `TIM2_CH2/CH4` `DMA1 Stream7`, `TIM2_CH3`
+`DMA1 Stream1`:
+
+- Direction: `Memory to Peripheral`.
+- Mode: `Circular`.
+    - Application is PWM servos.
+- Peripheral Increment Address: `Disabled`.
+- Memory Increment Address: `Enabled`.
+- (Both Peripheral and Memory) Data Width: `Half Word`.
+    - TIM2 is a 16-bit/pulse PWM timer, matching the Half Word (16-bits).
+- Use FIFO: `Disabled`.
