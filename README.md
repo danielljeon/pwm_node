@@ -39,7 +39,9 @@ PWM controller board designed for CAN-based control.
 
 ### 1.2 Block Diagram
 
-TODO.
+![pwm_node.drawio.png](docs/pwm_node.drawio.png)
+
+> Drawio file here: [pwm_node.drawio](docs/pwm_node.drawio).
 
 ### 1.3 Pin Configurations
 
