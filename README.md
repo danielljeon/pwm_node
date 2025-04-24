@@ -130,8 +130,7 @@ With these settings the following PWM values can be obtained:
 
 ### 3.3 Direct Memory Access (DMA)
 
-`TIM2_UP` `DMA1 Stream2`, `TIM2_CH1` `DMA1 Stream5`, `TIM2_CH2/CH4`
-`DMA1 Stream7`, `TIM2_CH3` `DMA1 Stream1`:
+`TIM2_UP` `DMA1 Stream2`:
 
 - Direction: `Memory to Peripheral`.
 - Mode: `Circular`.
