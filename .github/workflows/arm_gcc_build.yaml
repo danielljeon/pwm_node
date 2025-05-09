@@ -8,9 +8,17 @@ name: ARM GCC CMake build
 
 on:
   push:
+    paths:
+      - "**/*.h"
+      - "**/*.c"
+      - ".github/workflows/arm_gcc_build.yaml"
     branches:
       - main
   pull_request:
+    paths:
+      - "**/*.h"
+      - "**/*.c"
+      - ".github/workflows/arm_gcc_build.yaml"
     branches:
       - main
 
