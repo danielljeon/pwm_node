@@ -57,7 +57,7 @@ PWM controller firmware designed for CAN-based control.
 <details markdown="1">
   <summary>Pin & Peripherals Table</summary>
 
-| STM32F446RE | Peripheral       | Config             | Connection                | Notes |
+| STM32L432KC | Peripheral       | Config             | Connection                | Notes |
 |-------------|------------------|--------------------|---------------------------|-------|
 | PB3         | `SYS_JTDO-SWO`   |                    | TC2050 SWD Pin 6: `SWO`   |       |
 | PA14        | `SYS_JTCK-SWCLK` |                    | TC2050 SWD Pin 4: `SWCLK` |       |
