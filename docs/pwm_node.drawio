@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0" version="26.2.14">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0" version="27.0.5">
   <diagram name="Page-1" id="_8Z-U01voDiPmD-Zs1qL">
-    <mxGraphModel dx="1665" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1426" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -73,7 +73,7 @@
         <mxCell id="5DF6abSAtcW0_sRubqsM-11" value="Internal Comm " style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
           <mxGeometry x="150" y="90" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="5DF6abSAtcW0_sRubqsM-13" value="RCC HSE &amp;amp; LSE Crystals" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" parent="1" vertex="1">
+        <mxCell id="5DF6abSAtcW0_sRubqsM-13" value="RCC HSE Crystal" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" parent="1" vertex="1">
           <mxGeometry x="280" y="370" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="5DF6abSAtcW0_sRubqsM-14" value="Electronic Comp" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" parent="1" vertex="1">
