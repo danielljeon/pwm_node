@@ -1,6 +1,6 @@
 /*******************************************************************************
  * @file can.c
- * @brief General driver abstracting STM32 HAL: CAN.
+ * @brief General STM32L432KC driver abstracting STM32 HAL: CAN.
  *******************************************************************************
  */
 
